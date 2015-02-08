@@ -1,4 +1,5 @@
 par(cex.lab = .55, cex.axis = .55)
+<<<<<<< HEAD
 read <- read.table("household_power_consumption.txt", sep = ";",
                    col.names = c("Date","Time", "Global_active_power",
                                  "Global_reactive_power","Voltage",
@@ -7,6 +8,12 @@ read <- read.table("household_power_consumption.txt", sep = ";",
                    skip = 66637, nrows = 2880, colClasses = "character")
 
 #66,636 minutes from 16 Dec to 1 Feb; 2880 min in 2 days
+=======
+read <- read.table("household_power_consumption.txt", sep = ";", col.names = c("Date","Time",
+                                                                               "Global_active_power","Global_reactive_power","Voltage","Global_intensity",
+                                                                               "Sub_metering_1","Sub_metering_2","Sub_metering_3"),
+                   skip = 66637, nrows = 2880, colClasses = "character") #66,636 minutes from 16 Dec to 1 Feb; 2880 min in 2 days
+>>>>>>> 11a79846b21c6392cfda271037b1f7738c082491
 
 date <- as.Date(read$Date, "%d/%m/%Y")
 dateTime <- strptime(paste(date, read$Time), "%Y-%m-%d %H:%M:%S")
@@ -19,8 +26,13 @@ plot(dateTime, as.numeric(power[[6]]), type = "n", ylab = "Energy sub metering")
 lines(dateTime, as.numeric(power[[6]]))
 lines(dateTime, as.numeric(power[[7]]), col = "red")
 lines(dateTime, as.numeric(power[[8]]), col = "blue")
+<<<<<<< HEAD
 legend("topright", legend = c("Sub_metering_1", "Sub_metering_2",
                               "Sub_metering_3"), lty = c(1, 1, 1),
        col = c("black", "red", "blue"), cex = .8)
+=======
+legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), 
+       lty = c(1, 1, 1), col = c("black", "red", "blue"), cex = .8)
+>>>>>>> 11a79846b21c6392cfda271037b1f7738c082491
 
 dev.off()
