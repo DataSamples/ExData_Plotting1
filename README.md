@@ -1,3 +1,6 @@
+The below README was created with instructions for a submission for the Exploratory Data Analysis class in the Johns Hopkins University Coursera Data Science Specialization. The submissions are the PNG files in the repository, and their corresponding code file are saved as R files in the repository.
+
+
 ## Introduction
 
 This assignment uses data from
